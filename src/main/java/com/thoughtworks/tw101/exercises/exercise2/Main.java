@@ -8,6 +8,12 @@ public class Main {
 
         Accumulator accumulator = new Accumulator();
 
+        int count = 0;
+
+        accumulator.increment();
+
+        accumulator.total();
+
 
     }
 }

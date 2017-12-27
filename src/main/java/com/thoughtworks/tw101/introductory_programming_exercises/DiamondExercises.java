@@ -13,7 +13,15 @@ public class DiamondExercises {
 //             ***
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
-
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n-i-1; j++){
+                System.out.print("-");
+            }
+            for(int k = 0; k < (2*i+1); k++) {
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
     }
 
 //    Diamond
@@ -24,7 +32,30 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
+        //generate top half
+        for(int i = 0; i < n; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                System.out.print(" ");
+            }
+            for(int k = 0; k < (2*i+1); k++) {
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
 
+        //generate bottom half
+        int m = 2*n-3;
+        for(int i = 0; i < n-1; i++, m -= 2){
+
+            for(int j = 0; j <= i; j++) {
+                System.out.print(" ");
+            }
+            for(int k = 0; k < m; k++){
+                System.out.print("*");
+            }
+
+            System.out.print("\n");
+        }
     }
 
 //    Diamond with Name
@@ -36,6 +67,32 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
+        //generate top half
+        for(int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                System.out.print(" ");
+            }
+            for(int k = 0; k < (2*i+1); k++) {
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
 
+        //print name
+        System.out.println("anita");
+
+        //generate bottom half
+        int m = 2*n-3;
+        for(int i = 0; i < n-1; i++, m -= 2){
+
+            for(int j = 0; j <= i; j++) {
+                System.out.print(" ");
+            }
+            for(int k = 0; k < m; k++){
+                System.out.print("*");
+            }
+
+            System.out.print("\n");
+        }
     }
 }
