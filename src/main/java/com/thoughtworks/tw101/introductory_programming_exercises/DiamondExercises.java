@@ -13,15 +13,7 @@ public class DiamondExercises {
 //             ***
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < n-i-1; j++){
-                System.out.print("-");
-            }
-            for(int k = 0; k < (2*i+1); k++) {
-                System.out.print("*");
-            }
-            System.out.print("\n");
-        }
+        drawTopHalfOfDiamond(n, false);
     }
 
 //    Diamond
@@ -31,31 +23,9 @@ public class DiamondExercises {
 //            *****
 //             ***
 //              *
-    private static void drawADiamond(int n) { // CODE SMELL: bloater (long method)
-        //generate top half // CODE SMELL: bloater (duplicate code)
-        for(int i = 0; i < n; i++) {
-            for (int j = 0; j < n-i-1; j++) {
-                System.out.print(" ");
-            }
-            for(int k = 0; k < (2*i+1); k++) {
-                System.out.print("*");
-            }
-            System.out.print("\n");
-        }
-
-        //generate bottom half
-        int m = 2*n-3;
-        for(int i = 0; i < n-1; i++, m -= 2){
-
-            for(int j = 0; j <= i; j++) {
-                System.out.print(" ");
-            }
-            for(int k = 0; k < m; k++){
-                System.out.print("*");
-            }
-
-            System.out.print("\n");
-        }
+    private static void drawADiamond(int n) {
+        drawTopHalfOfDiamond(n, false);
+        drawBottomHalfOfDiamond(n);
     }
 
 //    Diamond with Name
@@ -67,9 +37,18 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
-        //generate top half
-        for(int i = 0; i < n-1; i++) {
-            for (int j = 0; j < n-i-1; j++) {
+        drawTopHalfOfDiamond(n, true);
+        System.out.println("anita");
+        drawBottomHalfOfDiamond(n);
+    }
+
+    private static void drawTopHalfOfDiamond(int n, boolean omitBase) {
+        int goUntilHere;
+
+        if (omitBase) { goUntilHere = n-1; }
+        else { goUntilHere = n; }
+        for(int i = 0; i < goUntilHere; i++){
+            for(int j = 0; j < n-i-1; j++){
                 System.out.print(" ");
             }
             for(int k = 0; k < (2*i+1); k++) {
@@ -77,11 +56,9 @@ public class DiamondExercises {
             }
             System.out.print("\n");
         }
+    }
 
-        //print name // CODE SMELL: dispensable (comment)
-        System.out.println("anita");
-
-        //generate bottom half
+    private static void drawBottomHalfOfDiamond(int n) {
         int m = 2*n-3;
         for(int i = 0; i < n-1; i++, m -= 2){
 

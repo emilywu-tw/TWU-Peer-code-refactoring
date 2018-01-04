@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class GameInput {
 
     private Scanner sc;
-    //= new Scanner(System.in); // CODE SMELL: dispensable (dead code)
 
     GameInput(){
         sc = new Scanner(System.in);
