@@ -31,8 +31,8 @@ public class DiamondExercises {
 //            *****
 //             ***
 //              *
-    private static void drawADiamond(int n) {
-        //generate top half
+    private static void drawADiamond(int n) { // CODE SMELL: bloater (long method)
+        //generate top half // CODE SMELL: bloater (duplicate code)
         for(int i = 0; i < n; i++) {
             for (int j = 0; j < n-i-1; j++) {
                 System.out.print(" ");
@@ -78,7 +78,7 @@ public class DiamondExercises {
             System.out.print("\n");
         }
 
-        //print name
+        //print name // CODE SMELL: dispensable (comment)
         System.out.println("anita");
 
         //generate bottom half
